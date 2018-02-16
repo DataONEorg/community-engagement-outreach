@@ -1,2 +1,2 @@
 # community-engagement-outreach
-Working fold for DataONE CEO activities
+Working folder for DataONE CEO activities
