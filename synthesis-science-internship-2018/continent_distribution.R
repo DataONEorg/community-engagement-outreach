@@ -1,4 +1,5 @@
 source("scripts/clean_data.R")
+source("~/Desktop/DataONE/systematic_review/synthesis-science-internship-2018/scripts/clean_data.R")
 
 ## Load libraries ####
 library(tidyverse)
@@ -31,7 +32,7 @@ continents <- readOGR("continents.json", "OGRGeoJSON")
 continents_map <- fortify(continents, region="CONTINENT")
 unique(continents_map$id)
 
-## Create figure ####
+## Create map ####
 gg <- ggplot()
 gg <- gg + geom_map(data=continents_map,
                     map=continents_map,
@@ -52,3 +53,8 @@ gg <- gg + labs(x=NULL, y=NULL)
 gg <- gg + theme(panel.border=element_blank())
 gg <- gg + theme(panel.grid=element_blank())
 gg
+
+## Create barplot ####
+
+continents_data_df_barplot <- plyr::count(continent_data_by_article, "continent")
+  
