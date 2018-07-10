@@ -16,7 +16,6 @@ source("./scripts/clean_data.R")
 #will now have your most up to date csv loaded
 
 ## Load libraries ####
-library(tidyverse)
 library(ggplot2)
 library(ggthemes)
 library(viridis)

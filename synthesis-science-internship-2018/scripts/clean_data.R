@@ -7,8 +7,8 @@ library(tidyverse)
 library(googlesheets)
 
 # Read data from computer
-raw_data <- read.csv("data_input/dataone_SR_raw_data.csv", head = TRUE)
-head(raw_data)
+#raw_data <- read.csv("data_input/dataone_SR_raw_data.csv", head = TRUE)
+#head(raw_data)
 
 # Read data from google sheets
 (my_sheets <- gs_ls()) #get list of sheets you can access, will possible prompt you with a google login and tidyverse permission page
