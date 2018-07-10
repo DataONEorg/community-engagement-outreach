@@ -1,5 +1,19 @@
-source("scripts/clean_data.R")
-source("~/Desktop/DataONE/systematic_review/synthesis-science-internship-2018/scripts/clean_data.R")
+#setwd to github project repository
+
+#source("~/synthesis-science-internship-2018/scripts/clean_data.R")
+#source("~/Desktop/DataONE/systematic_review/synthesis-science-internship-2018/scripts/clean_data.R")
+
+#should automatically put you in your GitHub dataone ceo project folder/repository, if not, set working directory to the github project repository
+#Or, you could decide you want to have the subfolder "synthesis-science-internship-2018" be the folder you work from, for less text to type up and potentially screw up. Could set to that folder as wd.
+
+#if you use the main repository
+source("./synthesis-science-internship-2018/scripts/clean_data.R")
+
+#if you decide to use the subfolder as the main umbrella
+setwd("./synthesis-science-internship-2018")
+source("./scripts/clean_data.R")
+
+#will now have your most up to date csv loaded
 
 ## Load libraries ####
 library(tidyverse)
