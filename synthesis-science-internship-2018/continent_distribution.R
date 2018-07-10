@@ -4,8 +4,11 @@ source("~/Desktop/DataONE/systematic_review/synthesis-science-internship-2018/sc
 ## Load libraries ####
 library(tidyverse)
 library(ggplot2)
+library(ggthemes)
 library(viridis)
-
+library(rgdal)
+library(rgeos)
+library(httr)
 ## Clean data ####
 # Subset only the columns we need for this analysis
 names(raw_data)
@@ -56,5 +59,14 @@ gg
 
 ## Create barplot ####
 
-continents_data_df_barplot <- plyr::count(continent_data_by_article, "continent")
+gg <- ggplot(continent_data_by_article, aes(x = reorder(continent,continent, function(x)-length(x))))
+gg <-gg + geom_bar(stat="count", fill = "#1f78b4")
+gg
+gg <- gg + theme_tufte()
+gg <- gg + ylab("Frequency")
+gg <- gg + xlab("Continent")
+gg <- gg + theme(axis.text.x = element_text(size=15, angle = 90, hjust = 1, vjust = .5),
+                 axis.text.y = element_text(size=15),
+                 axis.title = element_text(size=20))
+gg
   
