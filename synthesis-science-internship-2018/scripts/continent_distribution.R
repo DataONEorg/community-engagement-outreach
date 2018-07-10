@@ -9,6 +9,7 @@ library(viridis)
 library(rgdal)
 library(rgeos)
 library(httr)
+
 ## Clean data ####
 # Subset only the columns we need for this analysis
 names(raw_data)
