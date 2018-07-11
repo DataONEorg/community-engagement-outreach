@@ -26,3 +26,6 @@ gg <- gg + theme(axis.text.x = element_text(size=15, angle = 90, hjust = 1, vjus
 gg <- gg + geom_vline(aes(xintercept= 2.5), colour="#D35400", size = 1, linetype="dashed")
 
 gg
+
+# To access the data for each bar in barplot
+count(ecosystem_data_by_article, study_system)

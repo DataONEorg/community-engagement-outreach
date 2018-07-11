@@ -25,3 +25,6 @@ gg <- gg + theme(axis.text.x = element_text(size=15, angle = 90, hjust = 1, vjus
                  axis.title = element_text(size=20))
 
 gg
+
+# To get the actual numbers used in the barplot
+count(spatial_extent_data_by_article, spatial_scale)
