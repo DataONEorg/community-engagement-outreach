@@ -9,22 +9,19 @@ library(ggthemes)
 names(raw_data)
 
 # Get only unique IDs and spatial extent info
-spatial_extent_data <- select(raw_data, unique_ID, spatial_scale)
-
-spatial_extent_data_by_article <- distinct(spatial_extent_data, unique_ID, .keep_all = TRUE)
+where_did_they_cite_data <- select(raw_data, unique_ID, input_where_did_they_cite_data)
 
 ## Make figure ####
-gg <- ggplot(spatial_extent_data_by_article, aes(x = reorder(spatial_scale,spatial_scale, function(x)-length(x))))
-gg <-gg + geom_bar(stat="count")
+gg <- ggplot(where_did_they_cite_data, aes(x = reorder(input_where_did_they_cite_data,input_where_did_they_cite_data, function(x)-length(x))))
+gg <-gg + geom_bar(stat="count", fill = "#A569BD")
 gg
 gg <- gg + theme_tufte()
 gg <- gg + ylab("Frequency")
-gg <- gg + xlab("Spatial Scale")
+gg <- gg + xlab("Citation location")
 gg <- gg + theme(axis.text.x = element_text(size=15, angle = 90, hjust = 1, vjust = .5),
                  axis.text.y = element_text(size=15),
                  axis.title = element_text(size=20))
 
 gg
 
-# To get the actual numbers used in the barplot
-count(spatial_extent_data_by_article, spatial_scale)
+count(where_did_they_cite_data, input_where_did_they_cite_data)

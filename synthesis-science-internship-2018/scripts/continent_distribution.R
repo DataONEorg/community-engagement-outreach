@@ -82,5 +82,5 @@ gg <- gg + xlab("Continent")
 gg <- gg + theme(axis.text.x = element_text(size=15, angle = 90, hjust = 1, vjust = .5),
                  axis.text.y = element_text(size=15),
                  axis.title = element_text(size=20))
-gg
+count(continent_data_by_article, continent)
   
