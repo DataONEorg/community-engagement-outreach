@@ -15,3 +15,4 @@ library(googlesheets)
 my_sheets #just to see the list of sheets you can access
 gs1 = gs_title('database_for_systematic_review', verbose = TRUE) #get spreadsheet of interest
 raw_data = gs_read(gs1,ws = "Combined80papers") #get worksheet of interest from spreadsheet
+raw_data <- raw_data[raw_data$input_unique_in_paper!="no",] #remove duplicate source data rows
